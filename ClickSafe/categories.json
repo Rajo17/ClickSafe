@@ -1,0 +1,117 @@
+{
+  "default": "Uncategorized",
+
+  "bbc.com": "News & Media",
+  "cnn.com": "News & Media",
+  "nytimes.com": "News & Media",
+  "theguardian.com": "News & Media",
+  "reuters.com": "News & Media",
+  "ndtv.com": "News & Media",
+  "timesofindia.indiatimes.com": "News & Media",
+  "zeenews.india.com": "News & Media",
+  "abplive.com": "News & Media",
+
+  "facebook.com": "Social Media",
+  "instagram.com": "Social Media",
+  "x.com": "Social Media",
+  "twitter.com": "Social Media",
+  "linkedin.com": "Social Media",
+  "reddit.com": "Social Media",
+  "naukri.com": "Social Media",
+  "indeed.com": "Social Media",
+  "internshala.com": "Social Media",
+  "internship.aicte-india.org": "Social Media",
+
+
+  "sbi.bank.in": "Banking",
+  "onlinesbi.sbi.bank": "Banking",
+  "pnb.bank.in": "Banking",
+  "axis.bank.in": "Banking",
+  "bandhan.bank.in": "Banking",
+  "centralbank.bank.in": "Banking",
+  "canarabank.bank": "Banking",
+   
+
+  "uidai.gov.in": "Govtapp",
+  "indiapost.gov.in": "Govtapp",
+  "umang.gov.in": "Govtapp",
+  "passportindia.gov.in": "Govtapp",
+  "digilocker.gov.in": "Govtapp",
+  "india.gov.in": "Govtapp",
+  "employmentnews.gov.in": "Govtapp",
+  "gst.gov.in": "Govtapp",
+  "incometax.gov.in": "Govtapp",
+  "scholarships.gov.in": "Govtapp",
+  "irctc.co.in": "Govtapp",
+  "pmjay.gov.in": "Govtapp",
+  "pmkisan.gov.in": "Govtapp",
+  "bharatbillpay.com": "Govtapp",
+  "edistrict.wb.gov.in": "Govtapp",
+   
+   
+  "google.com": "Search & Tech",
+  "youtube.com": "Video / Entertainment",
+  "bing.com": "Search & Tech",
+
+  "amazon.com": "Shopping",
+  "amazon.in": "Shopping",
+  "flipkart.com": "Shopping",
+  "myntra.com": "Shopping",
+  "meesho.com": "Shopping",
+  "lenskart.com": "Shopping",
+  "titaneyeplus.com": "Shopping",
+  "purplle.com": "Shopping",
+  "nykaafashion.com": "Shopping",
+  "tirabeauty.com": "Shopping",
+  "smytten.com": "Shopping",
+  "boat-lifestyle.com": "Shopping",
+  "gonoise.com": "Shopping",
+  "blinkit.com": "Shopping",
+  "zepto.com": "Shopping",
+  "swiggy.com": "Shopping",
+  "zomato.com": "Shopping",
+  "bigbasket.com": "Shopping",
+  "ajio.com": "Shopping",
+  "jiomart.com": "Shopping",
+  "thedermaco.com": "Shopping",
+  "discoverpilgrim.com": "Shopping",
+  "luxe.ajio.com": "Shopping",
+  "savana.com": "Shopping",
+  "sencogoldanddiamonds.com": "Shopping",
+  "miabytanishq.com": "Shopping",
+  "anjalijewellers.in": "Shopping",
+  "tanishq.co.in": "Shopping",
+  "samsung.com": "Shopping",
+  "apple.com": "Shopping",
+  "realme.com": "Shopping",
+
+
+  
+
+  "github.com": "Development & Tech",
+  "stackoverflow.com": "Development & Tech",
+  "chatgpt.com": "AI & Tools",
+  "grok.com": "AI & Tools",
+  "gemini.google.com": "AI & Tools",
+  "claude.ai": "AI & Tools",
+  "perplexity.ai": "AI & Tools",
+  "openai.com": "AI & Tools",
+  "deepseek.com": "AI & Tools",
+
+
+
+
+
+  "coursera.org": "Education",
+  "udemy.com": "Education",
+  "khanacademy.org": "Education",
+  "pw.live": "Education",
+  "swayam.gov.in": "Education",
+  "apnacollege.in": "Education",
+  "vedantu.com": "Education",
+  "allen.in": "Education",
+
+
+  
+  "wikipedia.org": "Reference / Knowledge"
+}

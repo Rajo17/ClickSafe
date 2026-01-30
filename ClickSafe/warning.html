@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Warning - Proceed with Caution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --danger-red: #ff1744;
+      --danger-dark: #c41134;
+      --warning-bg: #0a0a0a;
+      --warning-surface: #1a1a1a;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --border-glow: rgba(255, 23, 68, 0.3);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--warning-bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 40px 20px;
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Animated background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(rgba(255, 23, 68, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 23, 68, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 20s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    /* Radial gradient overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(255, 23, 68, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .warning-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 30px;
+      position: relative;
+      animation: iconAppear 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+    }
+
+    @keyframes iconAppear {
+      from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-180deg);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    .warning-icon svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 20px rgba(255, 23, 68, 0.6));
+    }
+
+    h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      text-align: center;
+      margin-bottom: 15px;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ff1744 0%, #ff6b6b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: titleAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    }
+
+    @keyframes titleAppear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      font-weight: 300;
+      animation: subtitleAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    }
+
+    @keyframes subtitleAppear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reason-card {
+      background: var(--warning-surface);
+      border: 1px solid rgba(255, 23, 68, 0.2);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 
+        0 4px 24px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      animation: cardAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+    }
+
+    @keyframes cardAppear {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reason-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--danger-red), transparent);
+      opacity: 0.5;
+    }
+
+    .reason-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--danger-red);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    #reason {
+      color: var(--text-primary);
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-weight: 300;
+    }
+
+    .warning-notice {
+      background: rgba(255, 23, 68, 0.1);
+      border-left: 3px solid var(--danger-red);
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      animation: noticeAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+    }
+
+    @keyframes noticeAppear {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .warning-notice p {
+      font-size: 0.95rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .warning-notice strong {
+      color: var(--danger-red);
+      font-weight: 600;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      animation: buttonsAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+    }
+
+    @keyframes buttonsAppear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    button {
+      flex: 1;
+      padding: 16px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.9rem;
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    button span {
+      position: relative;
+      z-index: 1;
+    }
+
+    #back {
+      background: var(--danger-red);
+      color: white;
+      box-shadow: 0 4px 16px rgba(255, 23, 68, 0.4);
+    }
+
+    #back:hover {
+      background: var(--danger-dark);
+      box-shadow: 0 6px 24px rgba(255, 23, 68, 0.6);
+      transform: translateY(-2px);
+    }
+
+    #back:active {
+      transform: translateY(0);
+    }
+
+    #proceed {
+      background: transparent;
+      color: var(--text-primary);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #proceed:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    #proceed:active {
+      transform: translateY(0);
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 300;
+      opacity: 0.7;
+      animation: footerAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+    }
+
+    @keyframes footerAppear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.7;
+      }
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      .button-group {
+        flex-direction: column-reverse;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .reason-card {
+        padding: 20px;
+      }
+    }
+
+    /* Loading state animation */
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+
+    .loading {
+      background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        rgba(255, 255, 255, 0.15) 50%, 
+        rgba(255, 255, 255, 0.05) 100%);
+      background-size: 1000px 100%;
+      animation: shimmer 2s infinite;
+      color: transparent !important;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="warning-icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 20h20L12 2z" fill="#ff1744" opacity="0.2"/>
+        <path d="M12 2L2 20h20L12 2z" stroke="#ff1744" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 9v4" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="17" r="1" fill="#ffffff"/>
+      </svg>
+    </div>
+
+    <h1>Access Blocked by ClickSafe</h1>
+    <p class="subtitle">Potential security threat detected</p>
+
+    <div class="reason-card">
+      <div class="reason-label">Detection Details</div>
+      <div id="reason">Loading threat analysis...</div>
+    </div>
+
+    <div class="warning-notice">
+      <p><strong>⚠ Warning:</strong> This site or its redirect source was flagged as potentially malicious by VirusTotal security scanners.</p>
+    </div>
+
+    <div class="button-group">
+      <button id="proceed">
+        <span>Proceed Anyway</span>
+      </button>
+      <button id="back">
+        <span>Go Back to Safety</span>
+      </button>
+    </div>
+
+    <div class="footer">
+      URL Logger Extension · Security Protection Active
+    </div>
+  </div>
+
+  <script src="warning.js"></script>
+</body>
+</html>

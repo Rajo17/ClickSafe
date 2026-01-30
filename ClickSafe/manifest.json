@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "ClickSafe",
+  "description": "Detect and Block Phishing URLs and Fake Websites",
+  "version": "1",
+  "permissions": [
+    "webNavigation",
+    "tabs",
+    "storage",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://www.virustotal.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "action": {},
+  "web_accessible_resources": [
+    {
+      "resources": ["warning.html", "warning.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
